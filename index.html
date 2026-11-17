@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHANTOM GUARD 2.0</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard">
+
+        <header class="navbar">
+            <h2>👻 PHANTOM GUARD</h2>
+            <span class="status">● SYSTEM ONLINE</span>
+        </header>
+
+        <main class="hero" id="home">
+    <p class="tagline">NEXT GENERATION DEVICE SECURITY</p>
+
+    <h1>WELCOME TO<br>
+        <span>PHANTOM GUARD</span>
+    </h1>
+
+    <p class="description">
+        Your Smart Device Protection & Recovery System.
+    </p>
+
+    <button id="startBtn">START PROTECTION →</button>
+</main>
+
+<main class="main-dashboard" id="dashboard" style="display:none;">
+
+    <h1>SECURITY DASHBOARD</h1>
+    <p>Welcome to Phantom Guard Protection Center</p>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            <h2>🛡️ Device Security</h2>
+            <p>Monitor your device security.</p>
+            <button>OPEN</button>
+        </div>
+
+        <div class="feature-card">
+            <h2>📍 Device Tracking</h2>
+            <p>Check device tracking status.</p>
+            <button>OPEN</button>
+        </div>
+
+        <div class="feature-card">
+            <h2>🚨 Lost Device Mode</h2>
+            <p>Report a lost device.</p>
+            <button>OPEN</button>
+        </div>
+
+        <div class="feature-card">
+            <h2>⚡ Emergency Alert</h2>
+            <p>Manage emergency alerts.</p>
+            <button>OPEN</button>
+        </div>
+
+        <div class="feature-card">
+            <h2>📁 Recovery Records</h2>
+            <p>View recovery records.</p>
+            <button>OPEN</button>
+        </div>
+
+    </div>
+</main>
+<section class="feature-page" id="securityPage" style="display:none;">
+
+    <button class="back-btn" onclick="goDashboard()">← BACK TO DASHBOARD</button>
+
+    <h1>🛡️ DEVICE SECURITY</h1>
+    <p>PHANTOM GUARD SECURITY CENTER</p>
+
+    <div class="security-panel">
+
+        <h2>DEVICE STATUS</h2>
+
+        <div class="security-status">
+            <span>●</span> SYSTEM PROTECTED
+        </div>
+
+        <div class="security-info">
+            <p>Security Status: <b>Active</b></p>
+            <p>Protection Mode: <b>Enabled</b></p>
+            <p>Threat Detection: <b>Ready</b></p>
+        </div>
+
+        <button id="scanBtn">START SECURITY SCAN</button>
+
+        <p id="scanResult"></p>
+
+    </div>
+
+</section><section class="feature-page" id="trackingPage" style="display:none;">
+
+    <button class="back-btn" onclick="goDashboard()">← BACK TO DASHBOARD</button>
+
+    <h1>📍 DEVICE TRACKING</h1>
+    <p>PHANTOM GUARD LOCATION CENTER</p>
+
+    <div class="security-panel">
+
+        <h2>DEVICE LOCATION</h2>
+
+        <div class="security-status">
+            ● TRACKING SYSTEM READY
+        </div>
+
+        <div class="security-info">
+            <p>Device: <b>Current Device</b></p>
+            <p>Tracking: <b id="trackingStatus">Waiting</b></p>
+            <p>Location: <b id="deviceLocation">Not Available</b></p>
+        </div>
+
+        <button id="locationBtn">CHECK MY LOCATION</button>
+
+        <p id="locationResult"></p>
+
+    </div>
+
+</section><section class="feature-page" id="lostPage" style="display:none;">
+
+    <button class="back-btn" onclick="goDashboard()">← BACK TO DASHBOARD</button>
+
+    <h1>🚨 LOST DEVICE MODE</h1>
+    <p>PHANTOM GUARD DEVICE RECOVERY CENTER</p>
+
+    <div class="security-panel">
+
+        <h2>REPORT LOST DEVICE</h2>
+
+        <div class="lost-form">
+
+            <input type="text" id="deviceName" placeholder="Device Name">
+            
+            <input type="text" id="deviceModel" placeholder="Device Model">
+
+            <input type="text" id="lastLocation" placeholder="Last Known Location">
+
+            <input type="tel" id="contactNumber" placeholder="Contact Number">
+
+            <button id="reportBtn">SUBMIT LOST DEVICE REPORT</button>
+
+        </div>
+
+        <p id="reportResult"></p>
+
+    </div>
+
+</section><section class="feature-page" id="emergencyPage" style="display:none;">
+
+    <button class="back-btn" onclick="goDashboard()">← BACK TO DASHBOARD</button>
+
+    <h1>⚡ EMERGENCY ALERT</h1>
+    <p>PHANTOM GUARD EMERGENCY CENTER</p>
+
+    <div class="security-panel">
+
+        <h2>EMERGENCY CONTROL</h2>
+
+        <p style="color:#a8b8d0; margin-bottom:25px;">
+            Send an emergency alert to your saved contact.
+        </p>
+
+        <input
+            type="tel"
+            id="emergencyContact"
+            placeholder="Enter Emergency Contact Number"
+        >
+
+        <button id="sosBtn" class="sos-button">
+            ACTIVATE SOS ALERT
+        </button>
+
+        <p id="emergencyResult"></p>
+
+    </div>
+
+</section><section class="feature-page" id="recoveryPage" style="display:none;">
+
+    <button class="back-btn" onclick="goDashboard()">← BACK TO DASHBOARD</button>
+
+    <h1>📁 RECOVERY RECORDS</h1>
+    <p>PHANTOM GUARD RECOVERY CENTER</p>
+
+    <div class="security-panel">
+
+        <h2>RECOVERY HISTORY</h2>
+
+        <div class="recovery-stats">
+            <h3>TOTAL REPORTS</h3>
+            <h1 id="totalReports">0</h1>
+        </div>
+
+        <div id="recoveryList">
+            <p>No Recovery Records Found.</p>
+        </div>
+
+        <button id="refreshRecords">REFRESH RECORDS</button>
+
+    </div>
+
+</section>
+        <footer>
+            PHANTOM GUARD 2.0 | SMART SECURITY SYSTEM
+        </footer>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
